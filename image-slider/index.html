@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Full-Screen Image Slider</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .slider-container {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .slider-image {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slider-image.active {
+      opacity: 1;
+    }
+
+    .slider-controls {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      transform: translateY(-50%);
+      padding: 0 20px;
+    }
+
+    .slider-controls button {
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      padding: 15px 20px;
+      font-size: 1.5rem;
+      cursor: pointer;
+      border-radius: 50%;
+      transition: background-color 0.3s ease;
+    }
+
+    .slider-controls button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+  </style>
+</head>
+<body>
+  <div class="slider-container">
+    <img class="slider-image active" src="img/gwalior.jpg" alt="Image 1">
+    <img class="slider-image" src="img/indore.webp" alt="Image 2">
+    <img class="slider-image" src="img/jabalpur.jpg" alt="Image 3">
+    <img class="slider-image" src="img/orccha.jpg" alt="Image 4">
+
+    <div class="slider-controls">
+      <button id="prev-btn">&#10094;</button>
+      <button id="next-btn">&#10095;</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
